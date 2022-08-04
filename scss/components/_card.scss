@@ -1,0 +1,79 @@
+@use "../abstract/" as *;
+
+.dashboard {
+  & &__card {
+    padding: {
+      top: 4.5rem;
+    }
+    border-radius: 1.4rem;
+    overflow: hidden;
+
+    &[data-work] {
+      background-color: $color-accent-01;
+    }
+
+    &[data-play] {
+      background-color: $color-accent-02;
+    }
+
+    &[data-study] {
+      background-color: $color-accent-03;
+    }
+
+    &[data-exercise] {
+      background-color: $color-accent-04;
+    }
+
+    &[data-social] {
+      background-color: $color-accent-05;
+    }
+
+    &[data-selfcare] {
+      background-color: $color-accent-06;
+    }
+
+    .dashboard__card-container {
+      padding: 2.9rem 3rem 3.2rem;
+      background-color: $color-background-default;
+      height: 100%;
+      border-radius: 1.4rem;
+
+      .content-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: {
+          bottom: 2.5rem;
+        }
+
+        h2 {
+          font-size: $font-size-200;
+          font-weight: $font-weight-medium;
+        }
+
+        .ellipis-container {
+          img {
+            margin: {
+              bottom: 0.2rem;
+            }
+            vertical-align: middle;
+          }
+        }
+      }
+
+      .current-timeframe {
+        margin: {
+          bottom: 0.8rem;
+        }
+        font-size: $font-size-600;
+        font-weight: $font-weight-light;
+      }
+
+      .text-label {
+        font-size: $font-size-100;
+        font-weight: $font-weight-regular;
+        color: $color-text-dark;
+      }
+    }
+  }
+}
