@@ -1,0 +1,16 @@
+@use "../abstract/" as *;
+
+.dashboard {
+  @include center-block;
+  padding: {
+    top: 15.3rem;
+  }
+  width: 144 - (16.5 * 2) * 1rem;
+
+  & &__container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 3rem;
+  }
+}
