@@ -1,0 +1,15 @@
+@use "../abstract/" as *;
+
+.date {
+  color: $color-text-inverse;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: color 300ms ease;
+
+  &.date--active,
+  &:is(:hover, :focus) {
+    color: $color-text-default;
+  }
+}
