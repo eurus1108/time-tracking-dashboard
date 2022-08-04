@@ -1,0 +1,62 @@
+@use "../abstract/" as *;
+
+.dashboard {
+  & &__profile {
+    grid-row: span 2;
+    background-color: $color-background-default;
+
+    &,
+    & .profile-container {
+      border-radius: 1.5rem;
+    }
+
+    .profile-container {
+      padding: 3.4rem 3.2rem;
+      background-color: $color-background-primary;
+
+      .profile-img-container {
+        margin: {
+          bottom: 4rem;
+        }
+        width: 8.4rem;
+        height: 8.4rem;
+        outline: 3px solid $color-text-default;
+        border-radius: 999rem;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .text-content {
+        margin: {
+          bottom: 8 - 3.4 * 1rem;
+          right: 8.5 - 3.2 * 1rem;
+        }
+
+        h2 {
+          margin: {
+            bottom: 0.2rem;
+          }
+          font-size: $font-size-100;
+          font-weight: $font-weight-regular;
+        }
+
+        h1 {
+          font-size: $font-size-500;
+          font-weight: $font-weight-light;
+        }
+      }
+    }
+
+    .content-overlay {
+      padding: 2.6rem 3.2rem 3.3rem;
+
+      .date-container {
+        &:not(:last-child) {
+          margin-bottom: 2.1rem;
+        }
+      }
+    }
+  }
+}
