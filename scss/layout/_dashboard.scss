@@ -3,7 +3,8 @@
 .dashboard {
   @include center-block;
   padding: {
-    top: 15.3rem;
+    top: 25.3rem;
+    bottom: 25.3rem;
   }
   width: 144 - (16.5 * 2) * 1rem;
 
