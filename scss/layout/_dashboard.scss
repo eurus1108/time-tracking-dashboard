@@ -5,7 +5,16 @@
   padding: {
     top: 25.3rem;
   }
-  width: 144 - (16.5 * 2) * 1rem;
+  max-width: 144 - (16.5 * 2) * 1rem;
+  width: 100%;
+
+  @include breakpoint-down(medium) {
+    padding: {
+      top: 8.1rem;
+      bottom: 8.1rem;
+    }
+    max-width: 32.7rem;
+  }
 
   & &__container {
     display: grid;
@@ -13,5 +22,11 @@
     grid-template-rows: repeat(2, 1fr);
     gap: 3rem;
     height: 51.8rem;
+
+    @include breakpoint-down(medium) {
+      grid-template-columns: 1fr;
+      height: 100%;
+      gap: 2.4rem;
+    }
   }
 }

@@ -8,6 +8,12 @@
     }
     overflow: hidden;
 
+    @include breakpoint-down(medium) {
+      padding: {
+        top: 3.8rem;
+      }
+    }
+
     &,
     .dashboard__card-container {
       border-radius: 1.4rem;
@@ -74,6 +80,10 @@
         background-color: $color-background-hovered;
       }
 
+      @include breakpoint-down(medium) {
+        padding: 2.8rem 2.3rem;
+      }
+
       .content-title {
         display: flex;
         align-items: center;
@@ -95,6 +105,20 @@
             vertical-align: middle;
           }
         }
+
+        @include breakpoint-down(medium) {
+          margin: {
+            bottom: 0.7rem;
+          }
+        }
+      }
+
+      @include breakpoint-down(medium) {
+        .timeframe {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
       }
 
       .current-timeframe {
@@ -103,6 +127,13 @@
         }
         font-size: $font-size-600;
         font-weight: $font-weight-light;
+
+        @include breakpoint-down(medium) {
+          margin: {
+            bottom: 0;
+          }
+          font-size: $font-size-400;
+        }
       }
 
       .text-label {

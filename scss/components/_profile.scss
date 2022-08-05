@@ -14,6 +14,12 @@
       padding: 3.7rem 3.2rem;
       background-color: $color-background-primary;
 
+      @include breakpoint-down(medium) {
+        display: flex;
+        align-items: center;
+        padding: 3.5rem 3.2rem 3.4rem;
+      }
+
       .profile-img-container {
         margin: {
           bottom: 4.3rem;
@@ -22,6 +28,15 @@
         height: 7.8rem;
         outline: 3px solid $color-text-default;
         border-radius: 999rem;
+
+        @include breakpoint-down(medium) {
+          margin: 0;
+          margin: {
+            right: 2rem;
+          }
+          width: 6.4rem;
+          height: 6.4rem;
+        }
 
         img {
           width: 100%;
@@ -32,6 +47,10 @@
         margin: {
           bottom: 8 - 3.7 * 1rem;
           right: 8.5 - 3.2 * 1rem;
+        }
+
+        @include breakpoint-down(medium) {
+          margin: 0;
         }
 
         h2 {
@@ -47,15 +66,51 @@
           font-weight: $font-weight-light;
           line-height: 4.8rem;
         }
+
+        @include breakpoint-down(medium) {
+          margin: 0;
+
+          h2 {
+            margin: {
+              bottom: 0.4rem;
+            }
+          }
+
+          h1 {
+            font-size: $font-size-300;
+            line-height: 2.8rem;
+          }
+        }
       }
     }
 
     .content-overlay {
       padding: 2.6rem 3.2rem 3.2rem;
 
+      @include breakpoint-down(medium) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2.4rem 2.1rem 2.5rem;
+      }
+
       .date-container {
         &:not(:last-child) {
-          margin-bottom: 2rem;
+          margin: {
+            bottom: 2rem;
+          }
+
+          @include breakpoint-down(medium) {
+            &:first-child {
+              margin: {
+                left: 1.3rem;
+              }
+            }
+
+            margin: {
+              bottom: 0;
+            }
+          }
         }
       }
     }
