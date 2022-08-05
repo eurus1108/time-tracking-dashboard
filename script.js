@@ -12,7 +12,7 @@ const dailyData = async () => {
 
     cardTitle[i].innerHTML = obj.title;
     currentTf[i].innerHTML = `${obj.timeframes.daily.current}hrs`;
-    previousTf[i].innerHTML = `Week - ${obj.timeframes.daily.previous}hrs`;
+    previousTf[i].innerHTML = `Day - ${obj.timeframes.daily.previous}hrs`;
   }
 };
 
@@ -38,33 +38,38 @@ const monthlyData = async () => {
 
     cardTitle[i].innerHTML = obj.title;
     currentTf[i].innerHTML = `${obj.timeframes.monthly.current}hrs`;
-    previousTf[i].innerHTML = `Week - ${obj.timeframes.monthly.previous}hrs`;
+    previousTf[i].innerHTML = `Month - ${obj.timeframes.monthly.previous}hrs`;
   }
 };
 
-const timeframe = document.querySelectorAll(".date");
+const dataDaily = document.querySelector("[data-daily]");
+const dataWeekly = document.querySelector("[data-weekly]");
+const dataMonthly = document.querySelector("[data-monthly]");
 
-timeframe.forEach((elm) => {
-  elm.addEventListener("click", (e) => {
-    const clickedBtn = e.target;
-    clickedBtn.classList.toggle("date--active");
+dataDaily.addEventListener("click", () => {
+  dataDaily.classList.add("date--active");
+  dataWeekly.classList.remove("date--active");
+  dataMonthly.classList.remove("date--active");
 
-    timeframe.forEach((target) => {
-      if (target !== clickedBtn) {
-        target.classList.remove("date--active");
-      }
-    });
-  });
+  dailyData();
 });
 
-if (timeframe[0].classList.contains("date--active")) {
-  dailyData();
-}
+dataWeekly.addEventListener("click", () => {
+  dataDaily.classList.remove("date--active");
+  dataWeekly.classList.add("date--active");
+  dataMonthly.classList.remove("date--active");
 
-if (timeframe[1].classList.contains("date--active")) {
   weeklyData();
-}
+});
 
-if (timeframe[2].classList.contains("date--active")) {
+dataMonthly.addEventListener("click", () => {
+  dataDaily.classList.remove("date--active");
+  dataWeekly.classList.remove("date--active");
+  dataMonthly.classList.add("date--active");
+
   monthlyData();
+});
+
+if (dataWeekly.classList.contains("date--active")) {
+  weeklyData();
 }
