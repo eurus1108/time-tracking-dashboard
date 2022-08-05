@@ -4,7 +4,6 @@
   @include center-block;
   padding: {
     top: 25.3rem;
-    bottom: 25.3rem;
   }
   width: 144 - (16.5 * 2) * 1rem;
 
@@ -13,5 +12,6 @@
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 3rem;
+    height: 51.8rem;
   }
 }
