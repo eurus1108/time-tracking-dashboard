@@ -2,11 +2,16 @@
 
 .dashboard {
   & &__card {
+    position: relative;
     padding: {
       top: 4.5rem;
     }
-    border-radius: 1.4rem;
     overflow: hidden;
+
+    &,
+    .dashboard__card-container {
+      border-radius: 1.4rem;
+    }
 
     &[data-work] {
       background-color: $color-accent-01;
@@ -14,6 +19,11 @@
 
     &[data-play] {
       background-color: $color-accent-02;
+
+      .dashboard__card-img-container {
+        top: -0.6rem;
+        right: 2.1rem;
+      }
     }
 
     &[data-study] {
@@ -22,21 +32,47 @@
 
     &[data-exercise] {
       background-color: $color-accent-04;
+
+      .dashboard__card-img-container {
+        top: -0.1rem;
+      }
     }
 
     &[data-social] {
       background-color: $color-accent-05;
+
+      .dashboard__card-img-container {
+        top: -1.5rem;
+        right: 1.4rem;
+      }
     }
 
     &[data-selfcare] {
       background-color: $color-accent-06;
+
+      .dashboard__card-img-container {
+        right: 1.5rem;
+      }
+    }
+
+    .dashboard__card-img-container {
+      position: absolute;
+      top: -1rem;
+      right: 1.7rem;
     }
 
     .dashboard__card-container {
+      position: relative;
+      z-index: 1;
       padding: 2.9rem 3rem 3.2rem;
       background-color: $color-background-default;
       height: 100%;
-      border-radius: 1.4rem;
+      transition: background-color 300ms ease-in;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $color-background-hovered;
+      }
 
       .content-title {
         display: flex;
